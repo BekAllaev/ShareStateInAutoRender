@@ -1,6 +1,6 @@
 # Share state between blazor server and blazor web assembly(client)
 
-This was inspired by this article - https://www.telerik.com/blogs/fetching-sharing-data-between-components-blazor-auto-render-mode
+This repo was inspired by this article - https://www.telerik.com/blogs/fetching-sharing-data-between-components-blazor-auto-render-mode
 
 **Problem:** component that has auto render mode should be able to read/write the state from the server and from the client.
 Since its first render occurs on the server and next renders occur on the client. 
