@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareStateInAutoRender", "ShareStateInAutoRender\ShareStateInAutoRender\ShareStateInAutoRender.csproj", "{D7A134AC-48D9-46DF-8E68-1F35AB1C36E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShareStateInAutoRender.Client", "ShareStateInAutoRender\ShareStateInAutoRender.Client\ShareStateInAutoRender.Client.csproj", "{57BBEB6D-9D74-4A75-BE7C-29B352A7D468}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D7A134AC-48D9-46DF-8E68-1F35AB1C36E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7A134AC-48D9-46DF-8E68-1F35AB1C36E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7A134AC-48D9-46DF-8E68-1F35AB1C36E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7A134AC-48D9-46DF-8E68-1F35AB1C36E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57BBEB6D-9D74-4A75-BE7C-29B352A7D468}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57BBEB6D-9D74-4A75-BE7C-29B352A7D468}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57BBEB6D-9D74-4A75-BE7C-29B352A7D468}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57BBEB6D-9D74-4A75-BE7C-29B352A7D468}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0FF0BB58-05DB-4A4A-BC84-EE167344657D}
+	EndGlobalSection
+EndGlobal
