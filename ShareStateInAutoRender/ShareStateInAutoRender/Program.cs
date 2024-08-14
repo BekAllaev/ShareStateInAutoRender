@@ -1,5 +1,8 @@
-using ShareStateInAutoRender.Client.Pages;
+using ShareStateInAutoRender.Client.Services;
 using ShareStateInAutoRender.Components;
+using ShareStateInAutoRender.Endpoints;
+using ShareStateInAutoRender.Services;
+using ShareStateInAutoRender.State;
 
 namespace ShareStateInAutoRender
 {
@@ -13,6 +16,8 @@ namespace ShareStateInAutoRender
             builder.Services.AddRazorComponents()
                 .AddInteractiveServerComponents()
                 .AddInteractiveWebAssemblyComponents();
+
+            builder.Services.AddSingleton<ICounterStateResolver, ServerCounterStateResolver>();
 
             var app = builder.Build();
 
@@ -37,6 +42,8 @@ namespace ShareStateInAutoRender
                 .AddInteractiveServerRenderMode()
                 .AddInteractiveWebAssemblyRenderMode()
                 .AddAdditionalAssemblies(typeof(Client._Imports).Assembly);
+
+            app.MapCounterStateEndpoints();
 
             app.Run();
         }

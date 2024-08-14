@@ -1,0 +1,54 @@
+﻿@page "/secondCounter"
+@using ShareStateInAutoRender.Client.Services
+@rendermode InteractiveAuto
+@implements IDisposable
+@inject ICounterStateResolver CounterStateResolver
+@inject PersistentComponentState ApplicationState
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+    private PersistingComponentStateSubscription persistingSubscription;
+
+    protected override async Task OnInitializedAsync()
+    {
+        persistingSubscription = ApplicationState.RegisterOnPersisting(PersistCounterValue);
+
+        if (!ApplicationState.TryTakeFromJson<int>("CounterValue", out var counterValue))
+        {
+            currentCount = await CounterStateResolver.GetCounter();
+        }
+        else
+        {
+            currentCount = counterValue;
+        }
+
+        await base.OnInitializedAsync();
+    }
+
+    private Task PersistCounterValue()
+    {
+        ApplicationState.PersistAsJson("CounterValue", currentCount);
+
+        return Task.CompletedTask;
+    }
+
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+        CounterStateResolver.SetCounter(currentCount);
+    }
+
+    public void Dispose()
+    {
+        persistingSubscription.Dispose();
+    }
+}
